@@ -14,3 +14,15 @@ headerBtn.addEventListener('click', () => {
 close.addEventListener('click', () => {
   modal.classList.toggle('mobileFormView');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const waitlistForm = document.querySelector('#joinwaitlist');
+  waitlistForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_2ionx9l', 'MXELabWaitlist_0n3c1on', waitlistForm)
+      .then((res) => res.status === 200 && window.location.reload())
+      .catch((err) => console.log(err));
+  });
+});

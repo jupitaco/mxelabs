@@ -10,6 +10,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/styles/styles.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init('HUCv640l2ndUUn7U6');
+      })();
+    </script>
     <title>MXE Labs</title>
   </head>
   <body>
@@ -44,7 +55,7 @@
             the future of finance.
           </p>
           <section id="mobileForm" class="formWrapper">
-            <form>
+            <form id="joinwaitlist">
               <input
                 type="email"
                 id="email"
@@ -81,7 +92,7 @@
         <div class="close">
           <p>X</p>
         </div>
-        <form>
+        <form id="joinwaitlist">
           <label for="Emal"> Join the waitlist </label>
           <input
             type="email"
