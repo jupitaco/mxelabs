@@ -16,13 +16,15 @@ close.addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const waitlistForm = document.querySelector('#joinwaitlist');
-  waitlistForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm('service_2ionx9l', 'MXELabWaitlist_0n3c1on', waitlistForm)
-      .then((res) => res.status === 200 && window.location.reload())
-      .catch((err) => console.log(err));
+  const waitlistForm = document.querySelectorAll('.joinwaitlist');
+  waitlistForm.forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      console.log(e.target);
+      emailjs
+        .sendForm('service_ymnwkeb', 'MXELabWaitlist_0n3c1on', form)
+        .then((res) => res.status === 200 && window.location.reload())
+        .catch((err) => console.log(err));
+    });
   });
 });
